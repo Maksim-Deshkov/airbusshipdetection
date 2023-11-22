@@ -1,0 +1,14 @@
+PIL
+opencv_python
+keras
+matplotlib 
+numpy
+pandas 
+session_info
+skimage 
+sklearn 
+tensorflow
+Pillow
+scikit_image
+scikit_learn
+skimage
