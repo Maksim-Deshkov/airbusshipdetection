@@ -75,6 +75,6 @@ import keras.backend as K
 ## Results
 | Architecture | binary_accuracy | Input & Mask Resolution | Epochs |
 | ------ | ------ | ------ | ------ |
-| Unet | 0.958 | (256x256)  | 8 |
+| Unet | ~0.8 - 0.9 | (256x256)  | 6 |
  
 
