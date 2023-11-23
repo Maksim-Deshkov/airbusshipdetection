@@ -157,7 +157,7 @@ def unet(pretrained_weights = None, input_size = (256, 256, 3), NET_SCALING = NE
 seg_model = unet()
 
 #3-2. callbacks setting
-weight_path="fullres_model & weights/{}_weights.best.hdf5".format('seg_model')
+weight_path="models/fuller_model.h5"
 
 checkpoint = ModelCheckpoint(weight_path, monitor='val_dice_coef', verbose=1, 
                              save_best_only=True, mode='max', save_weights_only = True)
@@ -198,4 +198,4 @@ if IMG_SCALING is not None:
     fullres_model.add(layers.UpSampling2D(IMG_SCALING))
 else:
     fullres_model = seg_model
-fullres_model.save('fullres_model & weights/seg_model_weights.best.hdf5')
+fullres_model.save('models/fuller_model.best.h5')
