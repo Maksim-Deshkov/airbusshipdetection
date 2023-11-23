@@ -101,16 +101,16 @@ import keras.backend as K
 
 Example 1:
 
- ![alt text](images/comparison_0.png)
+ ![alt text](images/comparison_0.PNG)
  
 Example 2: 
 
- ![alt text](images/comparison_1.png)
+ ![alt text](images/comparison_1.PNG)
  
 Example 3: 
 
- ![alt text](images/comparison_2.png)
+ ![alt text](images/comparison_2.PNG)
  
 Example 4: 
 
- ![alt text](images/comparison_3.png)
+ ![alt text](images/comparison_3.PNG)
