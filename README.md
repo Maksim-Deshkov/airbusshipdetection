@@ -9,12 +9,15 @@ Abstract: this repo includes a pipeline using tf.keras for training UNet for the
 ### Dataset analysys 
 
 By reason of not balanced dataset, first of all, we need to create a new database with amount of ships for each picture and binary counter (column has_ship).
+
 ![alt text](images/processed__database.PNG)
 
  let's also visualize to see if it's really unbalanced:
+
  ![alt text](images/visualization_unbalanced.PNG)
  
  To deal with, we will extract 4000 or less samples per each class (0-15 ships).
+
 ![alt text](images/balanced_data.PNG)
 
 **Important:** balanced dataset (dataset created during analysis) includes 4000 images per each class (0-15 ships) because original dataset contains ~80% images with no ships. Also dataset was downscaled to 256x256, with original resolution the metrics might be better.
