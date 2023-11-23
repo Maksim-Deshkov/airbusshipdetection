@@ -1,16 +1,25 @@
 # Airbus-Ship-Detection-Challenge Introduction
 
 Abstract: this repo includes a pipeline using tf.keras for training UNet for the problem of ships detection.
-**I used notebooks/train.ipynb as a main file for work.**
+**I used notebooks/train.ipynb as a main file for work. As for me, notebook is better for understanding, cause it's sectioned and named ;)**
 *Also, I explained and commented most of the steps, since this test is designed more for training - therefore, I recommend considering it the ipynb notebook*
-*+ I've had a problem with testing, for some reason the saved model does not work correctly in ipynb. I didn't have enough time to fix the problem: Model testing works only in train notebook*
-As for me, notebook is better for understanding, cause it's sectioned and named ;) 
+*+ I've had a problem with testing, for some reason the saved model does not work correctly in model with dice coefficient. I didn't have enough time to fix the problem: Model testing (with dice coeff) works only in train notebook*
+
 
 ### Dataset analysys 
 
+By reason of not balanced dataset, first of all, we need to create a new database with amount of ships for each picture and binary counter (column has_ship).
+![alt text](images/processed__database.PNG)
+
+ let's also visualize to see if it's really unbalanced:
+ ![alt text](images/visualization_unbalanced.PNG)
+ 
+ To deal with, we will extract 4000 or less samples per each class (0-15 ships).
+![alt text](images/balanced_data.PNG)
+
 **Important:** balanced dataset (dataset created during analysis) includes 4000 images per each class (0-15 ships) because original dataset contains ~80% images with no ships. Also dataset was downscaled to 256x256, with original resolution the metrics might be better.
 
-### Guide (RIRST STEPS IS IMPORTANT FOR ALL!!!!)
+### Guide (FIRST STEPS IS IMPORTANT FOR ALL!!!!)
 
 Important to notice that we have dataset and enviroment so we need to download and install it!
    a. We need to create a base directory.
@@ -73,20 +82,15 @@ import keras.backend as K
 ## Architecture:
 
  - Architecture: UNet
- - Loss function: FocalLoss
+ - Loss function: Binary crossentropy
  - Optimizer: Adam (lr=1e-3, decay=1e-6)
  - learning scheduler: ReduceLROnPlateau(factor=0.5, patience=3)
  
- ## General thoughts
- 
- I've tried DiceBCELoss and DiceLoss, IoU as loss.
- The best results have been obtained with DiceBCELoss in this case.
- 
- I need to add that  I've been bounded with Cuda memory capacity, so basicaly I could not try batch size > 10 with original resolution. So, i said above, it was downscaled.
+
 
 ## Results
 | Architecture | binary_accuracy | Input & Mask Resolution | Epochs |
 | ------ | ------ | ------ | ------ |
-| Unet | ~0.8 - 0.9 | (256x256)  | 6 |
+| Unet | ??? | (256x256)  | 8 |
  
 
