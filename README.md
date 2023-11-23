@@ -20,6 +20,8 @@ By reason of not balanced dataset, first of all, we need to create a new databas
 
 ![alt text](images/balanced_data.PNG)
 
+ And noooow we are ready to split our data for validation and train! ;)
+
 **Important:** balanced dataset (dataset created during analysis) includes 4000 images per each class (0-15 ships) because original dataset contains ~80% images with no ships. Also dataset was downscaled to 256x256, with original resolution the metrics might be better.
 
 ### Guide (FIRST STEPS IS IMPORTANT FOR ALL!!!!)
