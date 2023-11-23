@@ -1,8 +1,11 @@
 # Airbus-Ship-Detection-Challenge Introduction
 > [!NOTE]
 > Abstract: this repo includes a pipeline using tf.keras for training UNet for the problem of ships detection. Also it include many little problems which I > did not have time to fix X)
+
 > **I used notebooks/train.ipynb as a main file for work. As for me, notebook is better for understanding, cause it's sectioned and named ;)**
+
 > *Also, I explained and commented most of the steps, since this test is designed more for training - therefore, I recommend considering it the ipynb notebook*
+
 > *+ I've had a problem with testing, for some reason the saved model does not work correctly in model with dice coefficient. I didn't have enough time to fix the problem: Model testing (with dice coeff) works only in train notebook*
 
 
